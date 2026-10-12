@@ -1,105 +1,46 @@
-# Strava Setup
+# Strava Application Setup
 
 ## Purpose
 
-This document describes the configuration of the Strava application used by the Fitness Data Platform.
+The objective of this setup is to enable secure access to personal Strava fitness data through the official Strava API.
 
-The application provides API access to personal fitness activity data and supports OAuth authentication.
+This project uses real personal activity data to demonstrate:
+
+- OAuth 2.0 Authentication
+- API Ingestion
+- Data Engineering Practices
+- Bronze / Silver / Gold Architecture
+- Incremental Data Processing
 
 ---
 
-# Application Information
+## Strava Application
 
-## Application Name
+Application Name:
 
-```text
 Fitness Data Platform
-```
 
-## Description
+Category:
+
+Data Importer
+
+API Tier:
+
+Standard Tier
+
+Client ID:
+
+286670
+
+Client Secret:
+
+Stored locally and never committed to source control.
+
+---
+
+## Environment Configuration
+
+Sensitive credentials are stored locally in:
 
 ```text
-Personal Data Engineering project for collecting, processing, and analyzing fitness activity data using a Bronze/Silver/Gold Lakehouse architecture.
-```
-
-## Website
-
-```text
-https://github.com/ecuronisy/fitness-data-platform
-```
-
-## Authorization Callback Domain
-
-```text
-localhost
-```
-
----
-
-# API Credentials
-
-## Client ID
-
-Stored securely as an environment variable.
-
-```text
-STRAVA_CLIENT_ID
-```
-
-## Client Secret
-
-Stored securely as an environment variable.
-
-```text
-STRAVA_CLIENT_SECRET
-```
-
----
-
-# Local Configuration
-
-Credentials must be stored in a local `.env` file.
-
-Example:
-
-```env
-STRAVA_CLIENT_ID=<client_id>
-STRAVA_CLIENT_SECRET=<client_secret>
-```
-
----
-
-# Security Rules
-
-- Never commit Client ID and Client Secret to GitHub.
-- Never store secrets in source code.
-- Use environment variables for all credentials.
-- Ensure `.env` is included in `.gitignore`.
-
----
-
-# Development Environment
-
-## Operating System
-
-Local development environment.
-
-## IDE
-
-Visual Studio Code
-
-## Language
-
-Python
-
----
-
-# Status
-
-Configured
-
----
-
-# Next Step
-
-S2 - Implement OAuth Authentication
+config/.env
